@@ -34,9 +34,8 @@ public class UpperLimitedPositiveCounter extends Counter {
     public void inc() {
         try {
             if (super.value == this.max) { throw new CounterException("\tLa compteur à atteint la valeur limite de " + this.max); }
-
-        } catch(CounterException ignored) { return; }
-        super.value++;
+            super.value++;
+        } catch(CounterException ignored) { }
     }
 
     public void add(int step) {
